@@ -10,21 +10,16 @@
     
     <meta name="description" content="Bootstrap 4 Template For Software Startups">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-    <link rel="shortcut icon" href="favicon.ico"> 
-    
+    <link rel="shortcut icon" href="favicon.ico">
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">    
     <!-- FontAwesome JS-->
     <script defer src="assets/fontawesome/js/all.min.js"></script>
-    
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
-
-    <!-- Theme CSS -->  
+    <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-
 </head> 
 
 <body class="docs-page">    
@@ -42,11 +37,10 @@
 	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
 	                <div class="top-search-box d-none d-lg-flex">
 		                <form class="search-form">
-				            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+				            <input type="text" placeholder="Buscar..." name="search" class="form-control search-input">
 				            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
 				        </form>
-	                </div>
-	
+	                </div>	
 					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
 						<li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
@@ -69,7 +63,9 @@
             </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3">
-				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Catalogo</a></li>
+				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-0"><span class="theme-icon-holder me-2"><i class="fas fa-map-first"></i></span>Inicio</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-0-1">Login()</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Catalogo</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Productos()</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Parametros()</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Cajero</a></li>
@@ -89,35 +85,55 @@
 	    </div><!--//docs-sidebar-->
 	    <div class="docs-content">
 		    <div class="container">
+			    <article class="docs-article" id="section-0">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Inicio <span class="docs-time">Actualizado: 2019-06-01</span></h1>
+					    <section class="docs-intro">
+						    <p>Api para venta de servicios y servicios financieros.</p>
+						</section><!--//docs-intro-->												
+				    </header>
+				    <section class="docs-section" id="item-0-1">
+						<h2 class="section-heading">Login()</h2>
+						<div class="alert alert-info" role="alert">
+							/login
+						</div>
+						<p>Informacion requerida para el obtener el token de acceso a la API. </p>						
+						<div class="docs-code-block">
+							<!-- ** Embed github code starts ** -->
+							<script src="https://gist.github.com/g-hernandez-bitpei/413eaef225c43e91e38425031789c38b.js"></script>
+						</div><!--//docs-code-block-->
+					</section><!--//section-->
+			    </article>
+
 			    <article class="docs-article" id="section-1">
 				    <header class="docs-header">
-					    <h1 class="docs-heading">Catalogo <span class="docs-time">Last updated: 2019-06-01</span></h1>
+					    <h1 class="docs-heading">Catalogo</h1>
 					    <section class="docs-intro">
 						    <p>Metodos para consultar el catalago de transacciones y subcatalogos que son utilizados en los productos disponibles.</p>
-						</section><!--//docs-intro-->
-						
-						
+						</section><!--//docs-intro-->						
 				    </header>
 				    <section class="docs-section" id="item-1-1">
 						<h2 class="section-heading">Productos(string)</h2>
-						<p>Proporciona la lista de productos asignados al comisionista. </p>
-						
+						<div class="alert alert-info" role="alert">
+							/api/catalogos/productos/{Terminal_Id}
+						</div>
+						<p>Proporciona la lista de productos asignados al comisionista. </p>						
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/ecc202c0e7626c66765e70f34f280678.js"></script>
-						</div><!--//docs-code-block-->                       
-					</section><!--//section-->
-					
+						</div><!--//docs-code-block-->
+					</section><!--//section-->					
 					<section class="docs-section" id="item-1-2">
 						<h2 class="section-heading">Parametros()</h2>
+						<div class="alert alert-info" role="alert">
+							/api/catalogos/parametros
+						</div>
 						<p>Proporciona el catalogo de parametros que son solicitados en productos financieros.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/3792bcda386640db8923b05ec9fce55f.js"></script>
-						</div><!--//docs-code-block--> 
-						
-					</section><!--//section-->
-										
+						</div><!--//docs-code-block-->
+					</section><!--//section-->										
 			    </article>
 			    
 			    <article class="docs-article" id="section-2">
@@ -129,15 +145,34 @@
 				    </header>
 				     <section class="docs-section" id="item-2-1">
 						<h2 class="section-heading">Registrar(DatosPersonales)</h2>
+						<div class="alert alert-info" role="alert">
+							/api/cajero/registrar
+						</div>
 						<p>Registra un nuevo cajero, al completar el registro se generara el <b>terminal_id</b> que es utilizado en la ruta <b>/api/transaccion/aplicar</b>. El numero de <b>terminal_id</b> sera retornado en la propiedad <b>mensaje</b>.</p>
+						<p>cURL para el registro de nuevos cajeros.</p>
+						<div class="docs-code-block">
+							<!-- ** Embed github code starts ** -->
+							<script src="https://gist.github.com/g-hernandez-bitpei/22da7352bbe26c0219d56703dafbaa35.js"></script>
+						</div><!--//docs-code-block-->
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-2">
 						<h2 class="section-heading">Productos()</h2>
-						<p>Proporciona la lista de cajeros activos.</p>
+						<div class="alert alert-info" role="alert">
+							/api/cajero/obtener
+						</div>
+						<p>Proporciona la lista de cajeros activos.</p>						
+						<p>cURL para consultar la lista de cajeros registrados por el comisionista.</p>
+						<div class="docs-code-block">
+							<!-- ** Embed github code starts ** -->
+							<script src="https://gist.github.com/g-hernandez-bitpei/15484c4bf6e6c271d51fc6d96207bf57.js"></script>
+						</div><!--//docs-code-block-->
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-3">
 						<h2 class="section-heading">Baja(int)</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<div class="alert alert-info" role="alert">
+							/api/cajero/baja/{idCajero}
+						</div>
+						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.</p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    			    
@@ -146,15 +181,18 @@
 					    <h1 class="docs-heading">Servicio</h1>
 					    <section class="docs-intro">
 						    <p>Metodos para consultar el estado del servicio y el saldo disponible del comisionista.</p>
-						</section><!--//docs-intro-->						
+						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-3-1">
 						<h2 class="section-heading">Saldo()</h2>
+						<div class="alert alert-info" role="alert">
+							/api/servicio/saldo
+						</div>
 						<p>Este método proporciona información sobre el saldo disponible del comisionista, así como el monto total de ingresos y egresos transaccionados durante el día de operación. La línea de autorización disponible para el comisionista dependerá de la configuración asignada..</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/552ae7172383a76571a37910776e82e8.js"></script>
-						</div><!--//docs-code-block--> 
+						</div><!--//docs-code-block-->
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
@@ -167,10 +205,16 @@
 				    </header>
 				     <section class="docs-section" id="item-4-1">
 						<h2 class="section-heading">ConfirmarTransaccion(string)</h2>
+						<div class="alert alert-info" role="alert">
+							/api/transaccion/confirmar/{idTransaccion}
+						</div>
 						<p>Comprueba el estado de una operacion, este endpoint puede ser consumido para validar el estatus de una operacion..</p>
-					</section><!--//section-->					
+					</section><!--//section-->
 					<section class="docs-section" id="item-4-2">
-						<h2 class="section-heading">AplicaTransaccion(SolicitudTransaccion)</h2>						
+						<h2 class="section-heading">AplicaTransaccion(SolicitudTransaccion)</h2>
+						<div class="alert alert-info" role="alert">
+							/api/transaccion/aplicar
+						</div>
 						<p>Carga para aplicar la venta de pines electronicos.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -228,7 +272,10 @@
 				    </header>
 				     <section class="docs-section" id="item-5-1">
 						<h2 class="section-heading">Reporte(string)</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
+						<div class="alert alert-info" role="alert">
+							/api/reporte/reporte/{fecha}
+						</div>
+						<p>Sed interdum turpis quis felis bibendum imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum ultricies malesuada tempor.</p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    
@@ -277,11 +324,9 @@
 	    </div>
     </div><!--//docs-wrapper-->
    
-       
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-    
     
     <!-- Page Specific JS -->
     <script src="assets/plugins/smoothscroll.min.js"></script>
