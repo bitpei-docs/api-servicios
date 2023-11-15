@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>CoderDocs - Bootstrap Documentation Template For Software Projects</title>
+    <title>PaymtProc - API Servicios Financieros</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+	<link href="assets/css/prism.css" rel="stylesheet" />
+
 </head> 
 
 <body class="docs-page">    
@@ -76,6 +78,7 @@
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Saldo()</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder me-2"><i class="fas fa-cogs"></i></span>Transaccion</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">ConfirmarTransaccion(string)</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">AplicaTransaccion(SolicitudTransaccion)</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder me-2"><i class="fas fa-tools"></i></span>Reporte</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Reporte(string)</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder me-2"><i class="fas fa-cons"></i></span>Catalogos</a></li>
@@ -94,14 +97,49 @@
 				    </header>
 				    <section class="docs-section" id="item-0-1">
 						<h2 class="section-heading">Login()</h2>
+						<p>endpoint para realizar la conexion con la api de venta de servicios. </p>						
 						<div class="alert alert-info" role="alert">
 							/login
 						</div>
-						<p>Informacion requerida para el obtener el token de acceso a la API. </p>						
+						<p>Informacion requerida para el obtener el token de acceso a la API. </p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/413eaef225c43e91e38425031789c38b.js"></script>
 						</div><!--//docs-code-block-->
+						
+						<div class="callout-block callout-block-success">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder me-1">
+		                                <i class="fas fa-thumbs-up"></i>
+		                            </span><!--//icon-holder-->
+	                                200
+	                            </h4>
+                                <p>La transaccion fue aplicada correctamente, se devuelve la respuesta original de la operacion</p>
+                            </div><!--//content-->
+                        </div><!--//callout-block-->
+						<div class="callout-block callout-block-danger me-1">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder">
+		                                <i class="fas fa-exclamation-triangle"></i>
+		                            </span><!--//icon-holder-->
+	                                400
+	                            </h4>
+                                <p>Ocurrio algun error al procesar la solicitud, debera intentar nuevamente. </p>
+                            </div><!--//content-->
+                        </div><!--//callout-block-->
+						<div class="callout-block callout-block-danger me-1">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder">
+		                                <i class="fas fa-exclamation-triangle"></i>
+		                            </span><!--//icon-holder-->
+	                                404
+	                            </h4>
+                                <p>La transaccion no fue aplicada, se devuelve la respuesta original de la operacion. </p>
+                            </div><!--//content-->
+                        </div><!--//callout-block-->
 					</section><!--//section-->
 			    </article>
 
@@ -117,7 +155,7 @@
 						<div class="alert alert-info" role="alert">
 							/api/catalogos/productos/{Terminal_Id}
 						</div>
-						<p>Proporciona la lista de productos asignados al comisionista. </p>						
+						<p>Proporciona la lista de productos asignados al comisionista. </p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/ecc202c0e7626c66765e70f34f280678.js"></script>
@@ -133,7 +171,7 @@
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/3792bcda386640db8923b05ec9fce55f.js"></script>
 						</div><!--//docs-code-block-->
-					</section><!--//section-->										
+					</section><!--//section-->
 			    </article>
 			    
 			    <article class="docs-article" id="section-2">
@@ -145,10 +183,10 @@
 				    </header>
 				     <section class="docs-section" id="item-2-1">
 						<h2 class="section-heading">Registrar(DatosPersonales)</h2>
+						<p>Registra un nuevo cajero, al completar el registro se generara el <b>terminal_id</b> que es utilizado en la ruta <b>/api/transaccion/aplicar</b>. El numero de <b>terminal_id</b> sera retornado en la propiedad <b>mensaje</b>.</p>
 						<div class="alert alert-info" role="alert">
 							/api/cajero/registrar
 						</div>
-						<p>Registra un nuevo cajero, al completar el registro se generara el <b>terminal_id</b> que es utilizado en la ruta <b>/api/transaccion/aplicar</b>. El numero de <b>terminal_id</b> sera retornado en la propiedad <b>mensaje</b>.</p>
 						<p>cURL para el registro de nuevos cajeros.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -157,10 +195,10 @@
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-2">
 						<h2 class="section-heading">Productos()</h2>
+						<p>Este método proporciona la lista detallada de cajeros activos conectados a la Api, su información, ingresos y egresos.</p>	
 						<div class="alert alert-info" role="alert">
 							/api/cajero/obtener
-						</div>
-						<p>Proporciona la lista de cajeros activos.</p>						
+						</div>					
 						<p>cURL para consultar la lista de cajeros registrados por el comisionista.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -169,10 +207,10 @@
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-3">
 						<h2 class="section-heading">Baja(int)</h2>
+						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.</p>
 						<div class="alert alert-info" role="alert">
 							/api/cajero/baja/{idCajero}
 						</div>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.</p>
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    			    
@@ -180,7 +218,7 @@
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Servicio</h1>
 					    <section class="docs-intro">
-						    <p>Metodos para consultar el estado del servicio y el saldo disponible del comisionista.</p>
+						    <p>Seccion que contiene los metodos necesarios para el comisionista consulte la informacion sobre el estado del servicio y el saldo disponible.</p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-3-1">
@@ -200,7 +238,7 @@
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Transaccion</h1>
 					    <section class="docs-intro">
-						    <p>Metodos para la aplicacion de transacciones y consulta de estatus de la operacion.</p>
+						    <p>Seccion que contiene los metodos para la aplicacion de transacciones y consulta de estatus de la operacion.</p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-4-1">
@@ -208,7 +246,7 @@
 						<div class="alert alert-info" role="alert">
 							/api/transaccion/confirmar/{idTransaccion}
 						</div>
-						<p>Comprueba el estado de una operacion, este endpoint puede ser consumido para validar el estatus de una operacion..</p>
+						<p>Comprueba el estado de una operacion, este endpoint puede ser consumido para validar el estatus de una operacion.</p>
 					</section><!--//section-->
 					<section class="docs-section" id="item-4-2">
 						<h2 class="section-heading">AplicaTransaccion(SolicitudTransaccion)</h2>
@@ -240,11 +278,25 @@
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/fcdbc61a78b7b34d724d7b2b42acf0b1.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para las cancelacione de depositos a tarjeta de debito, cuenta digital y pago de tarjeta de credito, el cliente debera proporcionar la referencia de cancelacion que recibio en su numero de celular.</p>
+						<p>Carga para las cancelaciones de depositos a tarjeta de debito, cuenta digital y pago de tarjeta de credito, el cliente debera proporcionar la referencia de cancelacion que recibio en su numero de celular.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/628da3733ae5e416d50b10ae2223f579.js"></script>
 						</div><!--//docs-code-block-->
+						
+						<div class="docs-code-block">
+							{
+								"respuesta": {
+									"folio": "38991"
+								},
+								"codigo_respuesta": 1,
+								"rastreo": "38991",
+								"mensaje": [
+									"Deposito referenciado aplicado correctamente"
+								]
+							}
+						</div><!--//docs-code-block-->
+
 						<p>Carga para el envio de operaciones de pagos depositos a cuenta digital y pago de tarjeta de debito, para este servicio se necesita de la clabe interbancaria asignada a la cuenta.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -288,16 +340,25 @@
 				    </header>
 				     <section class="docs-section" id="item-6-1">
 						<h2 class="section-heading">Consulta</h2>
+						<div class="alert alert-info" role="alert">
+							/api/catalogos/entidad-federativa
+						</div>
 						<p>cURL para la consulta del catalogo de entidades federativas, el id_entidad_federativa debera ser proporcionado en el registro del domicilio del cajero.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/38190c3eed5c220e380b9a20d22eaaa0.js"></script>
 						</div><!--//docs-code-block-->
+						<div class="alert alert-info" role="alert">
+							/api/catalogos/municipio
+						</div>
 						<p>cURL para realizar la consulta de los municipios por entidad federativa, el id_municipio debera ser proporcionado en el registro del domicilio del cajero.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/d26ad9da6e5e30d69f2cc56e9b1224b3.js"></script>
 						</div><!--//docs-code-block-->
+						<div class="alert alert-info" role="alert">
+							/api/catalogos/colonia
+						</div>
 						<p>cURL para realizar la consulta de colonias por id_municipio, el id_colonia debera ser proporcionado para el registro de domicilio de los cajeros</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -326,16 +387,16 @@
    
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <!-- Page Specific JS -->
     <script src="assets/plugins/smoothscroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
     <script src="assets/js/highlight-custom.js"></script> 
-    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
-    <script src="assets/js/docs.js"></script> 
-
+    <script src="assets/js/docs.js"></script>
+	<script src="assets/js/prism.js" data-manual></script>
 </body>
 </html> 
 
