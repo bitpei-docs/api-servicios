@@ -414,6 +414,51 @@
 							<script src="https://gist.github.com/g-hernandez-bitpei/552ae7172383a76571a37910776e82e8.js"></script>
 						</div><!--//docs-code-block-->
 					</section><!--//section-->
+					<p><b>Campos retornados en respuesta de la solicitud de Saldo comisionista</b></p>
+					<div class="table-responsive my-4">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">Nombre</th>
+									<th scope="col">Tipo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>id_comisionista</td>
+									<td>string<br />nullable:&nbsp;true<p>Identificador asignado al comisionista</p></td>
+								</tr>
+								<tr>
+									<td>saldo_disponible</td>
+									<td>number($double)<p>Devuelve el saldo disponible del comisionista, si el saldo es menor al monto del servicio a aplicar la transacci&oacute;n ser&aacute; rechazada</p></td>
+								</tr>
+								<tr>
+									<td>cliente</td>
+									<td>string<br />nullable:&nbsp;true<p>Nombre del comisionista</p></td>
+								</tr>
+								<tr>
+									<td>saldo_inicial</td>
+									<td>number($double)<p>Muestra el saldo con el que se finaliz&oacute; el d&iacute;a h&aacute;bil anterior a la fecha actual de la operaci&oacute;n.</p></td>
+								</tr>
+								<tr>
+									<td>ingresos</td>
+									<td>number($double)<p>Monto total de los ingresos generados por las operaciones realizadas en el dia</p></td>
+								</tr>
+								<tr>
+									<td>egresos</td>
+									<td>number($double)<p>Monto total de los egresos generados por las operaciones realizadas en el dia</p></td>
+								</tr>
+								<tr>
+									<td>saldo_final</td>
+									<td>number($double)<p>Representa la suma del saldo inicial + ingresos - egresos</p></td>
+								</tr>
+								<tr>
+									<td>linea_autorizada</td>
+									<td>number($double)<p>Monto otorgado al comisionista para su operaci&oacute;n (El monto depender&aacute; de la configuraci&oacute;n del servicio).</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>	
 			    </article><!--//docs-article-->
 			    
 			    <article class="docs-article" id="section-4">
