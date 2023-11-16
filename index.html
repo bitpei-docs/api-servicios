@@ -54,7 +54,6 @@
         </div><!--//branding-->
     </header><!--//header-->
     
-    
     <div class="docs-wrapper">
 	    <div id="docs-sidebar" class="docs-sidebar">
 		    <div class="top-search-box d-lg-none p-3">
@@ -65,7 +64,7 @@
             </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3">
-				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-0"><span class="theme-icon-holder me-2"><i class="fas fa-map-first"></i></span>Inicio</a></li>
+				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-0"><span class="theme-icon-holder me-2"><i class="fas fa-code-branch"></i></span>Inicio</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-0-1">Login()</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Catalogo</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Productos()</a></li>
@@ -77,11 +76,10 @@
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder me-2"><i class="fas fa-box"></i></span>Servicio</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">Saldo()</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-4"><span class="theme-icon-holder me-2"><i class="fas fa-cogs"></i></span>Transaccion</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">ConfirmarTransaccion(string)</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-2">AplicaTransaccion(SolicitudTransaccion)</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-4-1">AplicaTransaccion(SolicitudTransaccion)</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-5"><span class="theme-icon-holder me-2"><i class="fas fa-tools"></i></span>Reporte</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-5-1">Reporte(string)</a></li>
-				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder me-2"><i class="fas fa-cons"></i></span>Catalogos</a></li>
+				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-6"><span class="theme-icon-holder me-2"><i class="fas fa-book"></i></span>Catalogos</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-6-1">Consulta</a></li>
 			    </ul>
 		    </nav><!--//docs-nav-->
@@ -99,8 +97,10 @@
 						<h2 class="section-heading">Login()</h2>
 						<p>Este endpoint permite autenticar a un usuario mediante el envío de credenciales a través de una solicitud POST a la ruta proporcionada.</p>
 						<div class="alert alert-info" role="alert">
-							<b>POST</b> /login
-						</div>
+							<b>POST</b> /servicios-dev.bitpei.mx/login
+						</div>						
+						<p><b>Parámetros: </b> {Datos}: Serie de datos requeridos para obtener acceso en el servicio de la API. Este parámetro es dinámico y debe ser proporcionado en el cuerpo de la solicitud.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que contiene información detallada sobre el acceso a la API y el token requerido.</p>
 						<p>Informacion requerida para el obtener el token de acceso a la API. </p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -141,7 +141,7 @@
                             </div><!--//content-->
                         </div><!--//callout-block-->
 					</section><!--//section-->
-			    </article>
+			    </article><!--//docs-article-->
 
 			    <article class="docs-article" id="section-1">
 				    <header class="docs-header">
@@ -152,16 +152,13 @@
 				    </header>
 				    <section class="docs-section" id="item-1-1">
 						<h2 class="section-heading">Productos(string)</h2>
-						<p>
-							Este endpoint permite obtener información sobre productos asociados a una terminal específica mediante una solicitud GET. La ruta incluye un parámetro dinámico, {Terminal_Id}, que deberá ser reemplazado por el identificador único de la terminal para la cual se desea recuperar la información de productos.
-						</p>
-						<p>
-						<b>Parámetros: </b> {Terminal_Id}: Identificador único de la terminal para la cual se desea obtener información sobre productos. Este parámetro es dinámico y debe ser proporcionado en la URL.
-						<br><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que contiene información detallada sobre los productos asociados a la terminal especificada.
-						</p>
+						<p>Este endpoint permite obtener información sobre productos asociados a una terminal específica mediante una solicitud GET. La ruta incluye un parámetro dinámico, {Terminal_Id}, que deberá ser reemplazado por el identificador único de la terminal para la cual se desea recuperar la información de productos.</p>
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/catalogos/productos/{Terminal_Id}
 						</div>
+						<p><b>Parámetros: </b> {Terminal_Id}: Identificador único de la terminal para la cual se desea obtener información sobre productos. Este parámetro es dinámico y debe ser proporcionado en la URL.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que contiene información detallada sobre los productos asociados a la terminal especificada.</p>
+						<p>cURL para consultar los productos asignados al numero de terminal proporcionado.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/ecc202c0e7626c66765e70f34f280678.js"></script>
@@ -170,21 +167,18 @@
 					<section class="docs-section" id="item-1-2">
 						<h2 class="section-heading">Parametros()</h2>
 						<p>Endpoint que proporciona acceso a un catálogo de parámetros a través de una solicitud GET. Este catálogo de parámetros contiene información clave que se utiliza en la configuración y funcionamiento de las transacciones. La respuesta de esta solicitud proporcionará una lista de parámetros junto con sus valores correspondientes.</p>
-						<p>
-							<b>Parámetros:</b> No se especifica ningún parámetro en la URL, ya que se trata de una solicitud GET.
-						</p>
-						<p>
-							<b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que incluye la lista de parámetros y sus valores asociados.
-						</p>
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/catalogos/parametros
 						</div>
+						<p><b>Parámetros:</b> No se especifica ningún parámetro en la URL, ya que se trata de una solicitud GET.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que incluye la lista de parámetros y sus valores asociados.</p>
+						<p>cURL para consultar el catalogo de parametros, el resultado esta relacionado con el producto y subproducto donde debera ser visualizado esta informacion.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/3792bcda386640db8923b05ec9fce55f.js"></script>
 						</div><!--//docs-code-block-->
 					</section><!--//section-->
-			    </article>
+			    </article><!--//docs-article-->
 			    
 			    <article class="docs-article" id="section-2">
 				    <header class="docs-header">
@@ -195,22 +189,94 @@
 				    </header>
 				     <section class="docs-section" id="item-2-1">
 						<h2 class="section-heading">Registrar(DatosPersonales)</h2>
-						<p>Registra un nuevo cajero, al completar el registro se generara el <b>terminal_id</b> que es utilizado en la ruta <b>/api/transaccion/aplicar</b>. El numero de <b>terminal_id</b> sera retornado en la propiedad <b>mensaje</b>.</p>
+						<p>Endpoint para el registro de un nuevo cajero, para el cual solicita datos personales del comisionista, del negocio y ubicacion, al completar el registro se generara el <b>terminal_id</b> que es utilizado en la ruta <b>/api/transaccion/aplicar</b>. El numero de <b>terminal_id</b> sera retornado en la propiedad <b>mensaje</b>.</p>
 						<div class="alert alert-info" role="alert">
 							<b>POST</b> /api/cajero/registrar
 						</div>
+						<p><b>Parámetros: </b> {DatosPersonales}: Serie de datos para la cual se desea registrar en el servicio de la API. Este parámetro es dinámico y debe ser proporcionado en el cuerpo de la solicitud.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que contiene información detallada sobre el estatus asociados a la transaccion especificada.</p>
 						<p>cURL para el registro de nuevos cajeros.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/22da7352bbe26c0219d56703dafbaa35.js"></script>
 						</div><!--//docs-code-block-->
+						<div class="table-responsive my-4">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">Nombre</th>
+										<th scope="col">Tipo</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>curp</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>telefono_celular</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>correo_electronico</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>estado</td>
+										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+									</tr>
+									<tr>
+										<td>municipio</td>
+										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+									</tr>
+									<tr>
+										<td>colonia</td>
+										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+									</tr>
+									<tr>
+										<td>codigo_postal</td>
+										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+									</tr>
+									<tr>
+										<td>calle</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>nombre_negocio</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>id_actividad</td>
+										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+									</tr>
+									<tr>
+										<td>numero_exterior</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>numero_interior</td>
+										<td><p>string or null</p></td>
+									</tr>
+									<tr>
+										<td>latitud</td>
+										<td><p>integer or null&nbsp;&lt;int64&gt;</p></td>
+									</tr>
+									<tr>
+										<td>longitud</td>
+										<td><p>integer or null&nbsp;&lt;int64&gt;</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>						
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-2">
 						<h2 class="section-heading">Productos()</h2>
-						<p>Este método proporciona la lista detallada de cajeros activos conectados a la Api, su información, ingresos y egresos.</p>	
+						<p>Endpoint que al consultar mediante una solicitud GET proporciona una lista detallada de cajeros activos conectados a la Api, su información, ingresos y egresos.</p>	
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/cajero/obtener
-						</div>					
+						</div>
+						<p><b>Parámetros:</b> No se especifica ningún parámetro en la URL, ya que se trata de una solicitud GET.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que incluye la lista de cajeros activos y sus valores asociados.</p>
 						<p>cURL para consultar la lista de cajeros registrados por el comisionista.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -219,10 +285,18 @@
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-3">
 						<h2 class="section-heading">Baja(int)</h2>
-						<p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.</p>
+						<p>Endpoint que se utiliza para realizar la baja o eliminación de un cajero específico identificado por su ID_CAJERO en el sistema. Esta operación implica retirar el cajero de la base de datos o desactivarlo, lo que puede ser necesario en situaciones como la retirada física del cajero, cambios en la configuración del sistema, o por cualquier otra razón que requiera la eliminación del registro del cajero.
+							Para realizar esta acción, se espera que el cliente proporcione el ID_CAJERO como parámetro en la URL.</p>
 						<div class="alert alert-info" role="alert">
-							/api/cajero/baja/{idCajero}
+							<b>DELETE</b> /api/cajero/baja/{ID_CAJERO}
 						</div>
+						<p><b>Parámetros:</b> {ID_CAJERO} Identificador unico del cajero el cual se requiere dar de baja. Este parámetro es dinámico y debe ser proporcionado en la URL.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que incluye datos del personales del cajero.</p>
+						<p>cURL para dar de baja al cajero registrado por el comisionista.</p>
+						<div class="docs-code-block">
+							<!-- ** Embed github code starts ** -->
+							<script src="https://gist.github.com/g-hernandez-bitpei/15484c4bf6e6c271d51fc6d96207bf57.js"></script>
+						</div><!--//docs-code-block-->
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 			    			    
@@ -230,15 +304,18 @@
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Servicio</h1>
 					    <section class="docs-intro">
-						    <p>Seccion que contiene los metodos necesarios para el comisionista consulte la informacion sobre el estado del servicio y el saldo disponible.</p>
+						    <p>Seccion que contiene los metodos necesarios que usa el comisionista pueda consultar informacion sobre el estado del servicio y el saldo disponible.</p>
 						</section><!--//docs-intro-->
 				    </header>
 				     <section class="docs-section" id="item-3-1">
 						<h2 class="section-heading">Saldo()</h2>
+						<p>Este método proporciona información sobre el saldo disponible del comisionista, así como el monto total de ingresos y egresos transaccionados durante el día de operación. La línea de autorización disponible para el comisionista dependerá de la configuración asignada..</p>
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/servicio/saldo
 						</div>
-						<p>Este método proporciona información sobre el saldo disponible del comisionista, así como el monto total de ingresos y egresos transaccionados durante el día de operación. La línea de autorización disponible para el comisionista dependerá de la configuración asignada..</p>
+						<p><b>Parámetros:</b> No se especifica ningún parámetro en la URL, ya que se trata de una solicitud GET.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que incluye el estatus del servicio e informacion del saldo del comisionista.</p>
+						<p>cURL para la consulta de saldo del comisionista.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/552ae7172383a76571a37910776e82e8.js"></script>
@@ -253,16 +330,9 @@
 						    <p>Seccion que contiene los metodos para la aplicacion de transacciones y consulta de estatus de la operacion.</p>
 						</section><!--//docs-intro-->
 				    </header>
-				     <section class="docs-section" id="item-4-1">
-						<h2 class="section-heading">ConfirmarTransaccion(string)</h2>
-						<p>Este endpoint permite confirmar y puede ser consumido para validar el estatus de una transacción mediante una solicitud GET. El parámetro dinámico {idTransaccion} debe ser reemplazado por el identificador único de la transacción que se desea confirmar.</p>
-						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/transaccion/confirmar/{idTransaccion}
-						</div>
-					</section><!--//section-->
-					<section class="docs-section" id="item-4-2">
+					<section class="docs-section" id="item-4-1">
 						<h2 class="section-heading">AplicaTransaccion(SolicitudTransaccion)</h2>
-						<p>Endpoint para aplicar los servicios que son devueltos en el catalogo de <b>Productos</b>, para cada solicitud debera enviar un encabezado <b>Signature</b> que contendra la firma del cuerpo del mensaje.</p>
+						<p>Este endpoint permite aplicar una transacción mediante el envío de una solicitud POST. Se aplican los servicios que son devueltos en el catalogo de <b>Productos</b>, para cada solicitud debera enviar un encabezado <b>Signature</b> que contendra la firma del cuerpo del mensaje.</p>
 						<div class="alert alert-info" role="alert">
 							<b>POST</b> /api/transaccion/aplicar
 						</div>
@@ -299,6 +369,100 @@
                                 <p>La transaccion no fue aplicada, se devuelve la respuesta original de la operacion. </p>
                             </div><!--//content-->
                         </div><!--//callout-block-->
+						
+						<div class="table-responsive my-4">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">Nombre</th>
+										<th scope="col">Tipo</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>terminal_id</td>
+										<td><p>string or null</p><p>Numero de identificacion asignado al comisionista</p></td>
+									</tr>
+									<tr>
+										<td>id_transaccion</td>
+										<td><p>string or null</p><p>Identificador unico y obligatorio utilizado por el usuario para identificar el estatus de su operacion, se recomienda generar un identificaador UUID</p></td>
+									</tr>
+									<tr>
+										<td>id_servicio</td>
+										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del servicio porporcionado en el catalogo de productos</p></td>
+									</tr>
+									<tr>
+										<td>id_producto</td>
+										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del producto proporcionado en el catalog de productos</p></td>
+									</tr>
+									<tr>
+										<td>id_sub_producto</td>
+										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del subproducto proporcionado en el catalogo de productos</p></td>
+									</tr>
+									<tr>
+										<td>referencia</td>
+										<td><p>string or null</p><p>Numero de referencia del servicio o pago de credito, numero de celular de la recarga, numero de tarjeta para el deposito o clabe interbancaria para el pago de tarjeta de credito o deposito a cuenta digital</p></td>
+									</tr>
+									<tr>
+										<td>monto</td>
+										<td><p>number&nbsp;&lt;double&gt;</p><p>Monto del servicio a pagar o depositar</p></td>
+									</tr>
+									<tr>
+										<td>comision</td>
+										<td><p>number&nbsp;&lt;double&gt;</p><p>Monto de la comision cobrada al cliente, debe coincidir con la comision proporcionada por el catalogo de productos</p></td>
+									</tr>
+									<tr>
+										<td>deposito</td>
+										<td><p>object&nbsp;(Deposito)</p><p>Informacion para la transaccion de depositos a tarjeta de debito, depositos a cuenta digital y pagos de tarjeta de credito</p></td>
+									</tr>
+									<tr>
+										<td>tipo_front</td>
+										<td>
+											<p>integer&nbsp;&lt;int32&gt;</p><p>Tipo front asignado al servicio</p>
+											<table>
+												<tbody>
+													<tr>
+														<td><strong>Tipo</strong></td>
+														<td><strong>Descripcion</strong></td>
+													</tr>
+													<tr>
+														<td>1</td><td>Venta de Tiempo Aire</td>
+													</tr>
+													<tr>
+														<td>2</td><td>Pago de Servicios</td>
+													</tr>
+													<tr>
+														<td>4</td><td>Consulta de Saldo</td>
+													</tr>
+													<tr>
+														<td>39</td><td>Saldo Prepago / Pines</td>
+													</tr>
+													<tr>
+														<td>40</td><td>Financieros Pagos Referenciados</td>
+													</tr>
+													<tr>
+														<td>41</td><td>Financieros Deposito a Tarjeta</td>
+													</tr>
+													<tr>
+														<td>42</td><td>Financieros Deposito a Cuenta Clabe</td>
+													</tr>
+													<tr>
+														<td>43</td><td>Financieros Cancelaciones</td>
+													</tr>
+													<tr>
+														<td>44</td><td>Financieros Cobros Referenciados</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>fecha_hora</td>
+										<td><p>string or null</p><p>Fecha en que se envia la operacion, el formato debe ser dd/MM/yyyy HH:mm:ss, Ej.&nbsp;<strong>20/12/2023 13:30:00</strong></p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>	
 						<p>Carga para aplicar la venta de pines electronicos.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
@@ -359,7 +523,10 @@
 						<p>Metodo para la generacion del reporte por fecha, el cual contiene la informacion de cada transaccion realizada en la fecha indicada y por cada comisionista.</p>
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/reporte/reporte/{fecha}
-						</div>						
+						</div>
+						<p><b>Parámetros: </b> {fecha}: Fecha para la cual se desea obtener información sobre el informe de transacciones. Este parámetro es dinámico y debe ser proporcionado en la URL.</p>
+						<p><b>Respuesta Exitosa: </b>Código de estado HTTP 200 OK. Cuerpo de la respuesta en formato JSON, que contiene información detallada sobre las transacciones realizadas y el detalle de cada una.</p>
+						<p>cURL para la consulta de transacciones aplicadas por fecha.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/8285d523158fba3d5dc7a842a5ee7d51.js"></script>
