@@ -37,12 +37,6 @@
 	                <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">PaymtProc<span class="text-alt">Docs</span></span></a></div>    
                 </div><!--//docs-logo-wrapper-->
 	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-	                <div class="top-search-box d-none d-lg-flex">
-		                <form class="search-form">
-				            <input type="text" placeholder="Buscar..." name="search" class="form-control search-input">
-				            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-				        </form>
-	                </div>	
 					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
 						<li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
@@ -56,12 +50,6 @@
     
     <div class="docs-wrapper">
 	    <div id="docs-sidebar" class="docs-sidebar">
-		    <div class="top-search-box d-lg-none p-3">
-                <form class="search-form">
-		            <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
-		            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-		        </form>
-            </div>
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3">
 				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-0"><span class="theme-icon-holder me-2"><i class="fas fa-code-branch"></i></span>Inicio</a></li>
@@ -129,17 +117,6 @@
                                 <p>Ocurrio algun error al procesar la solicitud, debera intentar nuevamente. </p>
                             </div><!--//content-->
                         </div><!--//callout-block-->
-						<div class="callout-block callout-block-danger me-1">
-                            <div class="content">
-                                <h4 class="callout-title">
-	                                <span class="callout-icon-holder">
-		                                <i class="fas fa-exclamation-triangle"></i>
-		                            </span><!--//icon-holder-->
-	                                404
-	                            </h4>
-                                <p>La conexion no fue aplicada. </p>
-                            </div><!--//content-->
-                        </div><!--//callout-block-->
 					</section><!--//section-->
 			    </article><!--//docs-article-->
 
@@ -163,6 +140,95 @@
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/ecc202c0e7626c66765e70f34f280678.js"></script>
 						</div><!--//docs-code-block-->
+						<p><b>Campos retornados en respuesta de la solicitud de cada Producto</b></p>
+						<div class="table-responsive my-4">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">Nombre</th>
+										<th scope="col">Tipo</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>id_servicio</td>
+										<td>integer($int32)<p>Id asignado al servicio</p></td>
+									</tr>
+									<tr>
+										<td>servicio</td>
+										<td>string<br />nullable:&nbsp;true<p>Descripcion del servicio</p></td>
+									</tr>
+									<tr>
+										<td>id_producto</td>
+										<td>integer($int32)<p>Id asignado al producto</p></td>
+									</tr>
+									<tr>
+										<td>producto</td>
+										<td>string<br />nullable:&nbsp;true<p>Descripcion del producto</p></td>
+									</tr>
+									<tr>
+										<td>id_sub_producto</td>
+										<td>integer($int32)<p>Id asignado al subproducto</p></td>
+									</tr>
+									<tr>
+										<td>subproducto</td>
+										<td>string<br />nullable:&nbsp;true<p>Descripcion del subproducto</p></td>
+									</tr>
+									<tr>
+										<td>precio</td>
+										<td>number($double)<p>Costo del servicio que deber&aacute; pagar al cliente</p></td>
+									</tr>
+									<tr>
+										<td>comision</td>
+										<td>number($double)<p>Monto de comisi&oacute;n que se debera cobrar por el servicio</p></td>
+									</tr>
+									<tr>
+										<td>tipo_front</td>
+										<td>integer($int32)<p>Indica la configuracion de campos que seran enviados por cada tipo de servicio</p>
+											<table>
+												<tbody>
+													<tr>
+														<td><strong>Tipo</strong></td>
+														<td><strong>Descripcion</strong></td>
+													</tr>
+													<tr>
+														<td>1</td><td>Venta de Tiempo Aire</td>
+													</tr>
+													<tr>
+														<td>2</td><td>Pago de Servicios</td>
+													</tr>
+													<tr>
+														<td>4</td><td>Consulta de Saldo</td>
+													</tr>
+													<tr>
+														<td>39</td><td>Saldo Prepago / Pines</td>
+													</tr>
+													<tr>
+														<td>40</td><td>Financieros Pagos Referenciados</td>
+													</tr>
+													<tr>
+														<td>41</td><td>Financieros Deposito a Tarjeta</td>
+													</tr>
+													<tr>
+														<td>42</td><td>Financieros Deposito a Cuenta Clabe</td>
+													</tr>
+													<tr>
+														<td>43</td><td>Financieros Cancelaciones</td>
+													</tr>
+													<tr>
+														<td>44</td><td>Financieros Cobros Referenciados</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>leyenda</td>
+										<td>string<br />nullable:&nbsp;true<p>Leyenda que debera ser impreso en el comprobante del cliente</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</section><!--//section-->					
 					<section class="docs-section" id="item-1-2">
 						<h2 class="section-heading">Parametros()</h2>
@@ -270,7 +336,7 @@
 						</div>						
 					</section><!--//section-->
 					<section class="docs-section" id="item-2-2">
-						<h2 class="section-heading">Productos()</h2>
+						<h2 class="section-heading">Obtener()</h2>
 						<p>Endpoint que al consultar mediante una solicitud GET proporciona una lista detallada de cajeros activos conectados a la Api, su información, ingresos y egresos.</p>	
 						<div class="alert alert-info" role="alert">
 							<b>GET</b> /api/cajero/obtener
@@ -335,41 +401,7 @@
 						<p>Este endpoint permite aplicar una transacción mediante el envío de una solicitud POST. Se aplican los servicios que son devueltos en el catalogo de <b>Productos</b>, para cada solicitud debera enviar un encabezado <b>Signature</b> que contendra la firma del cuerpo del mensaje.</p>
 						<div class="alert alert-info" role="alert">
 							<b>POST</b> /api/transaccion/aplicar
-						</div>
-						<div class="callout-block callout-block-success">
-                            <div class="content">
-                                <h4 class="callout-title">
-	                                <span class="callout-icon-holder me-1">
-		                                <i class="fas fa-thumbs-up"></i>
-		                            </span><!--//icon-holder-->
-	                                200
-	                            </h4>
-                                <p>La transaccion fue aplicada correctamente, se devuelve la respuesta original de la operacion</p>
-                            </div><!--//content-->
-                        </div><!--//callout-block-->
-						<div class="callout-block callout-block-danger me-1">
-                            <div class="content">
-                                <h4 class="callout-title">
-	                                <span class="callout-icon-holder">
-		                                <i class="fas fa-exclamation-triangle"></i>
-		                            </span><!--//icon-holder-->
-	                                400
-	                            </h4>
-                                <p>Ocurrio algun error al procesar la solicitud, debera intentar nuevamente. </p>
-                            </div><!--//content-->
-                        </div><!--//callout-block-->
-						<div class="callout-block callout-block-danger me-1">
-                            <div class="content">
-                                <h4 class="callout-title">
-	                                <span class="callout-icon-holder">
-		                                <i class="fas fa-exclamation-triangle"></i>
-		                            </span><!--//icon-holder-->
-	                                404
-	                            </h4>
-                                <p>La transaccion no fue aplicada, se devuelve la respuesta original de la operacion. </p>
-                            </div><!--//content-->
-                        </div><!--//callout-block-->
-						
+						</div>						
 						<div class="table-responsive my-4">
 							<table class="table table-striped">
 								<thead>
@@ -381,11 +413,11 @@
 								<tbody>
 									<tr>
 										<td>terminal_id</td>
-										<td><p>string or null</p><p>Numero de identificacion asignado al comisionista</p></td>
+										<td><p>string or null</p><p>Numero de identificacion unico asignado al comisionista</p></td>
 									</tr>
 									<tr>
 										<td>id_transaccion</td>
-										<td><p>string or null</p><p>Identificador unico y obligatorio utilizado por el usuario para identificar el estatus de su operacion, se recomienda generar un identificaador UUID</p></td>
+										<td><p>string or null</p><p>Identificador unico utilizado por el usuario para identificar el estatus de su operacion, se recomienda generar un identificaador UUID</p></td>
 									</tr>
 									<tr>
 										<td>id_servicio</td>
@@ -393,7 +425,7 @@
 									</tr>
 									<tr>
 										<td>id_producto</td>
-										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del producto proporcionado en el catalog de productos</p></td>
+										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del producto proporcionado en el catalogo de productos</p></td>
 									</tr>
 									<tr>
 										<td>id_sub_producto</td>
@@ -426,7 +458,7 @@
 														<td><strong>Descripcion</strong></td>
 													</tr>
 													<tr>
-														<td>1</td><td>Venta de Tiempo Aire</td>
+														<td>1</td><td>Venta de Tiempo Aire (Recargas)</td>
 													</tr>
 													<tr>
 														<td>2</td><td>Pago de Servicios</td>
@@ -462,48 +494,70 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>	
-						<p>Carga para aplicar la venta de pines electronicos.</p>
+						</div>
+						<div class="callout-block callout-block-success">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder me-1">
+		                                <i class="fas fa-thumbs-up"></i>
+		                            </span><!--//icon-holder-->
+	                                200
+	                            </h4>
+                                <p>La transaccion fue aplicada correctamente, se devuelve la respuesta original de la operacion</p>
+                            </div><!--//content-->
+                        </div><!--//callout-block-->
+						<div class="callout-block callout-block-danger me-1">
+                            <div class="content">
+                                <h4 class="callout-title">
+	                                <span class="callout-icon-holder">
+		                                <i class="fas fa-exclamation-triangle"></i>
+		                            </span><!--//icon-holder-->
+	                                400
+	                            </h4>
+                                <p>Ocurrio algun error al procesar la solicitud, debera intentar nuevamente. </p>
+                            </div><!--//content-->
+                        </div><!--//callout-block-->
+						<p><b>TipoFront 39 Saldo Prepago/Pines</b> Carga para aplicar la venta de pines electronicos.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/09920d155801ef34b26aed6c568e07ce.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para la consulta de saldo de servicios.</p>
+						<p><b>TipoFront 4 Consulta de Saldo</b> Carga para la consulta de saldo de servicios.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/219ced841bc79d6a30597cec6b782a48.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para la aplicacion de pagos referenciados de creditos (CrediCapital).</p>
+						<p><b>TipoFront 40 Financieros Pagos Referenciados</b> Carga para la aplicacion de pagos referenciados de creditos (CrediCapital).</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/16ee00a8e847e2424bc5ce1dbb9c0a3e.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para la aplicacion de depositos referencuados a cuentas de clientes de CrediCapital.</p>
+						<p><b>TipoFront 40 Financieros Pagos Referenciados</b> Carga para la aplicacion de depositos referenciados a cuentas de clientes de CrediCapital.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/bf5c04174ae609e7330fd0c14635ce29.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga requerida para las operaciones de pago de servicios (ventas por catalogo, tv de paga, etc).</p>
+						<p><b>TipoFront 2 Pago de Servicios</b> Carga requerida para las operaciones de pago de servicios (ventas por catalogo, tv de paga, etc).</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/fcdbc61a78b7b34d724d7b2b42acf0b1.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para las cancelaciones de depositos a tarjeta de debito, cuenta digital y pago de tarjeta de credito, el cliente debera proporcionar la referencia de cancelacion que recibio en su numero de celular.</p>
+						<p><b>TipoFront 43 Financieros Cancelaciones</b> Carga para las cancelaciones de depositos a tarjeta de debito, cuenta digital y pago de tarjeta de credito, el cliente debera proporcionar la referencia de cancelacion que recibio en su numero de celular.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/628da3733ae5e416d50b10ae2223f579.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para el envio de operaciones de pagos depositos a cuenta digital y pago de tarjeta de debito, para este servicio se necesita de la clabe interbancaria asignada a la cuenta.</p>
+						<p><b>TipoFront 42 Financieros Deposito a Cuenta Clabe</b> Carga para el envio de operaciones de pagos depositos a cuenta digital y pago de tarjeta de debito, para este servicio se necesita de la clabe interbancaria asignada a la cuenta.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/0d092c8e46f44a5a2fe7a90ade36a13b.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para el envio de operaciones de depositos a tarjeta de debito, para este servicio se necesita del numero de tarjeta de debito del cliente para aplicar la operacion.</p>
+						<p><b>TipoFront 41 Financieros Deposito a Tarjeta</b> Carga para el envio de operaciones de depositos a tarjeta de debito, para este servicio se necesita del numero de tarjeta de debito del cliente para aplicar la operacion.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/92b26cda57d45dd153914168a068d01f.js"></script>
 						</div><!--//docs-code-block-->
-						<p>Carga para aplicar recargas electronicas.</p>
+						<p><b>TipoFront 1 Venta de Tiempo Aire (Recargas)</b> Carga para aplicar recargas electronicas.</p>
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/8e2b26cebe695235050f5d4aa460ebfd.js"></script>
@@ -544,7 +598,7 @@
 				     <section class="docs-section" id="item-6-1">
 						<h2 class="section-heading">Consulta</h2>
 						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogos/entidad-federativa
+							<b>GET</b> /api/catalogo/entidad-federativa
 						</div>
 						<p>cURL para la consulta del catalogo de entidades federativas, el id_entidad_federativa debera ser proporcionado en el registro del domicilio del cajero.</p>
 						<div class="docs-code-block">
@@ -552,7 +606,7 @@
 							<script src="https://gist.github.com/g-hernandez-bitpei/38190c3eed5c220e380b9a20d22eaaa0.js"></script>
 						</div><!--//docs-code-block-->
 						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogos/municipio
+							<b>GET</b> /api/catalogo/municipio?idEntidadFederativa={ID_ENTIDAD_FEDERATIVA}
 						</div>
 						<p>cURL para realizar la consulta de los municipios por entidad federativa, el id_municipio debera ser proporcionado en el registro del domicilio del cajero.</p>
 						<div class="docs-code-block">
@@ -560,7 +614,7 @@
 							<script src="https://gist.github.com/g-hernandez-bitpei/d26ad9da6e5e30d69f2cc56e9b1224b3.js"></script>
 						</div><!--//docs-code-block-->
 						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogos/colonia
+							<b>GET</b> /api/catalogo/colonia?IdMunicipio={ID_MUNICIPIO}
 						</div>
 						<p>cURL para realizar la consulta de colonias por id_municipio, el id_colonia debera ser proporcionado para el registro de domicilio de los cajeros</p>
 						<div class="docs-code-block">
