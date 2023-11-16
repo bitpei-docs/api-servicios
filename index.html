@@ -57,6 +57,7 @@
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Catalogo</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Productos()</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Parametros()</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">Ubicacion()</a></li>
 				    <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Cajero</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Registrar(DatosPersonales)</a></li>
 				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Productos()</a></li>
@@ -124,7 +125,7 @@
 				    <header class="docs-header">
 					    <h1 class="docs-heading">Catalogo</h1>
 					    <section class="docs-intro">
-						    <p>Seccion con los metodos para consultar la informacion del catalogo de productos y subcatalogos para la aplicacion de ventas y transacciones.</p>
+						    <p>Seccion con los metodos para consultar la informacion del catalogo de productos, subcatalogosy parametros de ubicacion para la aplicacion de ventas y transacciones.</p>
 						</section><!--//docs-intro-->						
 				    </header>
 				    <section class="docs-section" id="item-1-1">
@@ -244,6 +245,34 @@
 							<script src="https://gist.github.com/g-hernandez-bitpei/3792bcda386640db8923b05ec9fce55f.js"></script>
 						</div><!--//docs-code-block-->
 					</section><!--//section-->
+					<section class="docs-section" id="item-1-3">
+					   <h2 class="section-heading">Ubicacion()</h2>
+					   <p>Seccion que contiene los metodos para la consulta de datos para la direccion del comisionista como entidad federativa, municipio y colonia.</p>
+					   <div class="alert alert-info" role="alert">
+						   <b>GET</b> /api/catalogo/entidad-federativa
+					   </div>
+					   <p>cURL para la consulta del catalogo de entidades federativas, el id_entidad_federativa debera ser proporcionado en el registro del domicilio del cajero.</p>
+					   <div class="docs-code-block">
+						   <!-- ** Embed github code starts ** -->
+						   <script src="https://gist.github.com/g-hernandez-bitpei/38190c3eed5c220e380b9a20d22eaaa0.js"></script>
+					   </div><!--//docs-code-block-->
+					   <div class="alert alert-info" role="alert">
+						   <b>GET</b> /api/catalogo/municipio?idEntidadFederativa={ID_ENTIDAD_FEDERATIVA}
+					   </div>
+					   <p>cURL para realizar la consulta de los municipios por entidad federativa, el id_municipio debera ser proporcionado en el registro del domicilio del cajero.</p>
+					   <div class="docs-code-block">
+						   <!-- ** Embed github code starts ** -->
+						   <script src="https://gist.github.com/g-hernandez-bitpei/d26ad9da6e5e30d69f2cc56e9b1224b3.js"></script>
+					   </div><!--//docs-code-block-->
+					   <div class="alert alert-info" role="alert">
+						   <b>GET</b> /api/catalogo/colonia?IdMunicipio={ID_MUNICIPIO}
+					   </div>
+					   <p>cURL para realizar la consulta de colonias por id_municipio, el id_colonia debera ser proporcionado para el registro de domicilio de los cajeros</p>
+					   <div class="docs-code-block">
+						   <!-- ** Embed github code starts ** -->
+						   <script src="https://gist.github.com/g-hernandez-bitpei/bd35f6cfeac2a81c8d506ee1dbe2f282.js"></script>
+					   </div><!--//docs-code-block-->
+				   </section><!--//section-->
 			    </article><!--//docs-article-->
 			    
 			    <article class="docs-article" id="section-2">
@@ -584,42 +613,6 @@
 						<div class="docs-code-block">
 							<!-- ** Embed github code starts ** -->
 							<script src="https://gist.github.com/g-hernandez-bitpei/8285d523158fba3d5dc7a842a5ee7d51.js"></script>
-						</div><!--//docs-code-block-->
-					</section><!--//section-->
-			    </article><!--//docs-article-->
-			    
-			    <article class="docs-article" id="section-6">
-				    <header class="docs-header">
-					    <h1 class="docs-heading">Consultas</h1>
-					    <section class="docs-intro">
-						    <p>Seccion que contiene los metodos para la consulta de datos para la direccion del comisionista como entidad federativa, municipio y colonia.</p>
-						</section><!--//docs-intro-->
-				    </header>
-				     <section class="docs-section" id="item-6-1">
-						<h2 class="section-heading">Consulta</h2>
-						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogo/entidad-federativa
-						</div>
-						<p>cURL para la consulta del catalogo de entidades federativas, el id_entidad_federativa debera ser proporcionado en el registro del domicilio del cajero.</p>
-						<div class="docs-code-block">
-							<!-- ** Embed github code starts ** -->
-							<script src="https://gist.github.com/g-hernandez-bitpei/38190c3eed5c220e380b9a20d22eaaa0.js"></script>
-						</div><!--//docs-code-block-->
-						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogo/municipio?idEntidadFederativa={ID_ENTIDAD_FEDERATIVA}
-						</div>
-						<p>cURL para realizar la consulta de los municipios por entidad federativa, el id_municipio debera ser proporcionado en el registro del domicilio del cajero.</p>
-						<div class="docs-code-block">
-							<!-- ** Embed github code starts ** -->
-							<script src="https://gist.github.com/g-hernandez-bitpei/d26ad9da6e5e30d69f2cc56e9b1224b3.js"></script>
-						</div><!--//docs-code-block-->
-						<div class="alert alert-info" role="alert">
-							<b>GET</b> /api/catalogo/colonia?IdMunicipio={ID_MUNICIPIO}
-						</div>
-						<p>cURL para realizar la consulta de colonias por id_municipio, el id_colonia debera ser proporcionado para el registro de domicilio de los cajeros</p>
-						<div class="docs-code-block">
-							<!-- ** Embed github code starts ** -->
-							<script src="https://gist.github.com/g-hernandez-bitpei/bd35f6cfeac2a81c8d506ee1dbe2f282.js"></script>
 						</div><!--//docs-code-block-->
 					</section><!--//section-->
 			    </article><!--//docs-article-->
