@@ -155,7 +155,7 @@
 									</tr>
 									<tr>
 										<td>servicio</td>
-										<td>string<br />nullable:&nbsp;true<p>Descripcion del servicio</p></td>
+										<td>string<p>Descripcion del servicio</p></td>
 									</tr>
 									<tr>
 										<td>id_producto</td>
@@ -163,7 +163,7 @@
 									</tr>
 									<tr>
 										<td>producto</td>
-										<td>string<br />nullable:&nbsp;true<p>Descripcion del producto</p></td>
+										<td>string<p>Descripcion del producto</p></td>
 									</tr>
 									<tr>
 										<td>id_sub_producto</td>
@@ -171,7 +171,7 @@
 									</tr>
 									<tr>
 										<td>subproducto</td>
-										<td>string<br />nullable:&nbsp;true<p>Descripcion del subproducto</p></td>
+										<td>string<p>Descripcion del subproducto</p></td>
 									</tr>
 									<tr>
 										<td>precio</td>
@@ -223,7 +223,7 @@
 									</tr>
 									<tr>
 										<td>leyenda</td>
-										<td>string<br />nullable:&nbsp;true<p>Leyenda que debera ser impreso en el comprobante del cliente</p></td>
+										<td>string<br /><p>Leyenda que debera ser impreso en el comprobante del cliente</p></td>
 									</tr>
 								</tbody>
 							</table>
@@ -304,59 +304,59 @@
 								<tbody>
 									<tr>
 										<td>curp</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Curp de la persona fisica, este dado sera validado con la RENAPO</p></td>
 									</tr>
 									<tr>
 										<td>telefono_celular</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Numero de telefono del cajero</p></td>
 									</tr>
 									<tr>
 										<td>correo_electronico</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Correo electronico del cajero (opcional)</p></td>
 									</tr>
 									<tr>
 										<td>estado</td>
-										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p><b>id_entidad_federativa</b> donde se encuentra ubicado el establecimiento, este dato se validara con el catalogo <b>EntidadFederativa</b></p></td>
 									</tr>
 									<tr>
 										<td>municipio</td>
-										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p><b>id_municipio</b> donde se encuentra ubicado el establecimiento, este dato se validara con el catalogo <b>Municipio</b></p></td>
 									</tr>
 									<tr>
 										<td>colonia</td>
-										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p><b>id_colonia</b> donde se encuentra ubiado el establecimiento, este dato se validara con el catalogo <b>Colonia</b></p></td>
 									</tr>
 									<tr>
 										<td>codigo_postal</td>
-										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p>Codigo postal donde se encuentra ubicado el establecimiento</p></td>
 									</tr>
 									<tr>
 										<td>calle</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Direccion del establecimiento</p></td>
 									</tr>
 									<tr>
 										<td>nombre_negocio</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Nombre del negocio, si no cuenta con uno devera enviar el texto NINGUNO</p></td>
 									</tr>
 									<tr>
 										<td>id_actividad</td>
-										<td><p>integer or null&nbsp;&lt;int32&gt;</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p><b>id_actividad</b> del negocio, este identificador lo debera obtener del catalogo <b>Actividad</b></p></td>
 									</tr>
 									<tr>
 										<td>numero_exterior</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Numero exterior del establecimiento</p></td>
 									</tr>
 									<tr>
 										<td>numero_interior</td>
-										<td><p>string or null</p></td>
+										<td>string<p>Numero interior del establecimiento</p></td>
 									</tr>
 									<tr>
 										<td>latitud</td>
-										<td><p>integer or null&nbsp;&lt;int64&gt;</p></td>
+										<td>integer&nbsp;&lt;int64&gt;<p>Coordenadas de la ubicacion del negocio (Latitud)</p></td>
 									</tr>
 									<tr>
 										<td>longitud</td>
-										<td><p>integer or null&nbsp;&lt;int64&gt;</p></td>
+										<td>integer&nbsp;&lt;int64&gt;<p>Coordenadas de la ubicacion del negocio (Longitud)</p></td>
 									</tr>
 								</tbody>
 							</table>
@@ -426,7 +426,7 @@
 							<tbody>
 								<tr>
 									<td>id_comisionista</td>
-									<td>string<br />nullable:&nbsp;true<p>Identificador asignado al comisionista</p></td>
+									<td>string<p>Identificador asignado al comisionista</p></td>
 								</tr>
 								<tr>
 									<td>saldo_disponible</td>
@@ -434,7 +434,7 @@
 								</tr>
 								<tr>
 									<td>cliente</td>
-									<td>string<br />nullable:&nbsp;true<p>Nombre del comisionista</p></td>
+									<td>string<p>Nombre del comisionista</p></td>
 								</tr>
 								<tr>
 									<td>saldo_inicial</td>
@@ -485,44 +485,44 @@
 								<tbody>
 									<tr>
 										<td>terminal_id</td>
-										<td><p>string or null</p><p>Numero de identificacion unico asignado al comisionista</p></td>
+										<td>string<p>Numero de identificacion unico asignado al comisionista</p></td>
 									</tr>
 									<tr>
 										<td>id_transaccion</td>
-										<td><p>string or null</p><p>Identificador unico utilizado por el usuario para identificar el estatus de su operacion, se recomienda generar un identificaador UUID</p></td>
+										<td>string<p>Identificador unico utilizado por el usuario para identificar el estatus de su operacion, se recomienda generar un identificaador UUID</p></td>
 									</tr>
 									<tr>
 										<td>id_servicio</td>
-										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del servicio porporcionado en el catalogo de productos</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p>Id del servicio porporcionado en el catalogo de productos</p></td>
 									</tr>
 									<tr>
 										<td>id_producto</td>
-										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del producto proporcionado en el catalogo de productos</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p>Id del producto proporcionado en el catalogo de productos</p></td>
 									</tr>
 									<tr>
 										<td>id_sub_producto</td>
-										<td><p>integer&nbsp;&lt;int32&gt;</p><p>Id del subproducto proporcionado en el catalogo de productos</p></td>
+										<td>integer&nbsp;&lt;int32&gt;<p>Id del subproducto proporcionado en el catalogo de productos</p></td>
 									</tr>
 									<tr>
 										<td>referencia</td>
-										<td><p>string or null</p><p>Numero de referencia del servicio o pago de credito, numero de celular de la recarga, numero de tarjeta para el deposito o clabe interbancaria para el pago de tarjeta de credito o deposito a cuenta digital</p></td>
+										<td>string<p>Numero de referencia del servicio o pago de credito, numero de celular de la recarga, numero de tarjeta para el deposito o clabe interbancaria para el pago de tarjeta de credito o deposito a cuenta digital</p></td>
 									</tr>
 									<tr>
 										<td>monto</td>
-										<td><p>number&nbsp;&lt;double&gt;</p><p>Monto del servicio a pagar o depositar</p></td>
+										<td>number&nbsp;&lt;double&gt;<p>Monto del servicio a pagar o depositar</p></td>
 									</tr>
 									<tr>
 										<td>comision</td>
-										<td><p>number&nbsp;&lt;double&gt;</p><p>Monto de la comision cobrada al cliente, debe coincidir con la comision proporcionada por el catalogo de productos</p></td>
+										<td>number&nbsp;&lt;double&gt;<p>Monto de la comision cobrada al cliente, debe coincidir con la comision proporcionada por el catalogo de productos</p></td>
 									</tr>
 									<tr>
 										<td>deposito</td>
-										<td><p>object&nbsp;(Deposito)</p><p>Informacion para la transaccion de depositos a tarjeta de debito, depositos a cuenta digital y pagos de tarjeta de credito</p></td>
+										<td>object&nbsp;(Deposito)<p>Informacion para la transaccion de depositos a tarjeta de debito, depositos a cuenta digital y pagos de tarjeta de credito</p></td>
 									</tr>
 									<tr>
 										<td>tipo_front</td>
 										<td>
-											<p>integer&nbsp;&lt;int32&gt;</p><p>Tipo front asignado al servicio</p>
+											integer&nbsp;&lt;int32&gt;<p>Tipo front asignado al servicio</p>
 											<table>
 												<tbody>
 													<tr>
@@ -562,7 +562,7 @@
 									</tr>
 									<tr>
 										<td>fecha_hora</td>
-										<td><p>string or null</p><p>Fecha en que se envia la operacion, el formato debe ser dd/MM/yyyy HH:mm:ss, Ej.&nbsp;<strong>20/12/2023 13:30:00</strong></p></td>
+										<td>string<p>Fecha en que se envia la operacion, el formato debe ser dd/MM/yyyy HH:mm:ss, Ej.&nbsp;<strong>20/12/2023 13:30:00</strong></p></td>
 									</tr>
 								</tbody>
 							</table>
